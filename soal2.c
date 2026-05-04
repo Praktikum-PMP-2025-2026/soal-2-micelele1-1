@@ -68,7 +68,7 @@
     int i;
     struct Node* head1 = NULL;
     struct Node* head2 = NULL;
-    while (scanf("%d", &input)==1){
+    while (scanf("%d", &input)!=0){
         printf("input 1 %d", input);
         ukuran1=input;
         printf("ukuran 1 %d", input);
@@ -87,11 +87,11 @@
         }
     }
     i++;
-    if(i=ukuran1){
+    if(i==ukuran1){
             ukuran2=input;
             printf("ukuran 2 %d", ukuran2);
         }
-    for(int i=ukuran1; i<ukuran2+ukuran1; i++){
+    for(i=ukuran1; i<ukuran2+ukuran1; i++){
         printf("input 2 %d", input);
             struct Node *newnode2 = createNode(input);
             newnode2->next=NULL;
@@ -106,11 +106,11 @@
             temp2->next=newnode2;
         }
         }       
-       
+     struct Node *res = sortedMerge(head1, head2);
+     printlist(res);
+    return 0;   
     } 
-    struct Node *res = sortedMerge(head1, head2);
-    printlist(res);
-    return 0;    
+       
     }
     
 
